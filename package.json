@@ -34,7 +34,9 @@
     "mocha": "^2.2.5",
     "simplebuild-jshint": "^1.0.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "simplebuild": "^0.5.0"
+  },
   "peerDependencies": {
     "karma": ">=0.13"
   }

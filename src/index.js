@@ -5,7 +5,7 @@
 (function() {
 	"use strict";
 
-	var simplebuild = require("../../core/lib/simplebuild.js");
+	var simplebuild = require("simplebuild");
 	var path = require("path");
 	var Server = require("karma").Server;
 	var runner = require("karma").runner;
