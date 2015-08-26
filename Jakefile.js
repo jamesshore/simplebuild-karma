@@ -4,6 +4,14 @@
 
 var jshint = require("simplebuild-jshint");
 var mocha = require("./build/mocha_runner");
+var karma = require("./src");
+
+desc("Start Karma server (run this first!)");
+task("karma", function() {
+	karma.serve({
+		configFile: "./build/karma.conf.js"
+	}, complete, fail);
+}, { async: true });
 
 desc("Validate code (lint and test)");
 task("default", ["lint", "test"], function() {
@@ -21,8 +29,8 @@ task("lint", function() {
 }, { async: true });
 
 desc("Run tests");
-task("test", [], function() {
-	console.log("Testing JavaScript:");
+task("test", function() {
+	console.log("Testing JavaScript (be sure to start Karma server and capture Firefox first):");
 	mocha.runTests({
 		files: "src/**/_*_test.js",
 		options: {

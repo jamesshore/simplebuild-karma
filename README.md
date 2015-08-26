@@ -33,7 +33,7 @@ To use the CI server workflow, call `run` with the `capture` option set. Karma w
 Start the Karma server and leave it running.
 
 * `options`: an object containing the following properties:
-    * `configFile` (string): path to the Karma config file
+    * `configFile` (string): path to the Karma config file.
 
 * `success()`: a function to call if the server exits successfully.
 
@@ -45,7 +45,7 @@ Start the Karma server and leave it running.
 Run Karma tests. You need to call `start` first unless you use the `capture` option. 
 
 * `options`: an object containing the following properties:
-    * `configFile` (string): path to the Karma config file
+    * `configFile` (string): path to the Karma config file.
     * `expectedBrowsers` (optional array of strings, default `[]`): a list of test browsers. A warning is printed to stdout for each browser in the list that isn't tested. The string must exactly match the string displayed by Karma (e.g., "Chrome 42.0.2311 (Mac OS X 10.10.3)").
     * `strict` (optional boolean, default `true`): causes the tests to fail if `expectedBrowsers` results in any warnings.
     * `capture` (optional array of strings, default `[]`): if present, automatically starts Karma, captures the provided browsers, and shuts them down when done. (Equivalent to using `karma start configFile --browsers XX,YY --single-run`.)
@@ -149,7 +149,10 @@ Created by James Shore.
 ### Release Process
 
 1. Update version history in readme and check in
-2. Ensure clean build: `./jake.sh`
+2. Ensure clean build: 
+    1. `./jake.sh karma`
+    2. Capture firefox: `http://localhost:9876`
+    3. `./jake.sh`
 3. Update npm version: `npm version [major|minor|patch]`
 4. Release to npm: `npm publish`
 5. Release to github: `git push && git push --tags`

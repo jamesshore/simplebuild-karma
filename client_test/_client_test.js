@@ -2,4 +2,12 @@
 (function() {
 	"use strict";
 
+	describe("Client test", function() {
+
+		it("runs in Karma", function() {
+			//throw new Error("fail!");
+		});
+
+	});
+
 }());
