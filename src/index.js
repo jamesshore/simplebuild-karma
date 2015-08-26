@@ -10,7 +10,7 @@
 	var Server = require("karma").Server;
 	var runner = require("karma").runner;
 
-	exports.serve = function(userOptions, success, fail) {
+	exports.start = function(userOptions, success, fail) {
 		try {
 			var defaults = {};
 			var types = { configFile: String };
@@ -28,10 +28,6 @@
 		catch (err) {
 			return fail(err.message);
 		}
-		//var command = KARMA + " start " + configFile;
-		//sh.run(command, success, function () {
-		//	fail("Could not start Karma server");
-		//});
 	};
 
 	exports.run = function(userOptions, success, fail) {

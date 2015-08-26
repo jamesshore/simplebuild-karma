@@ -139,6 +139,7 @@ This library is a simplebuild module. In addition to being used as a standalone 
 
 ## Version History
 
+__0.8.1:__ Fix: Corrected API naming error (`start` was misnamed)
 __0.8.0:__ Initial release.
 
 

@@ -8,7 +8,7 @@ var karma = require("./src");
 
 desc("Start Karma server (run this first!)");
 task("karma", function() {
-	karma.serve({
+	karma.start({
 		configFile: "./build/karma.conf.js"
 	}, complete, fail);
 }, { async: true });
