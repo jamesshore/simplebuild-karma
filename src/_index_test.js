@@ -31,6 +31,13 @@
 			}, assertSuccess(done), assertNotFailure(done));
 		});
 
+		it("passes client args through", function(done) {
+			runner.run({
+				configFile: configFile,
+				clientArgs: [ "--grep=NO-SUCH-TEST-NAME:" ]
+			}, assertNotSuccess(done), assertFailure(done, "Karma tests failed"));    // should fail due to no tests running
+		});
+
 		it("automatically captures browsers", function(done) {
 			this.timeout(10 * 1000);
 			runner.run({

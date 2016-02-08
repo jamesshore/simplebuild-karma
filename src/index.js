@@ -35,20 +35,23 @@
 			var defaults = {
 				expectedBrowsers: [],
 				strict: true,
-				capture: []
+				capture: [],
+				clientArgs: []
 			};
 			var types = {
 				configFile: String,
 				expectedBrowsers: Array,
 				strict: Boolean,
-				capture: Array
+				capture: Array,
+				clientArgs: Array
 			};
 			var options = simplebuild.normalizeOptions(userOptions, defaults, types);
 
 			var config = {
 				configFile: path.resolve(options.configFile),
 				browsers: options.capture,
-				singleRun: options.capture.length > 0
+				singleRun: options.capture.length > 0,
+				clientArgs: options.clientArgs
 			};
 
 			var runKarma = runner.run.bind(runner);
