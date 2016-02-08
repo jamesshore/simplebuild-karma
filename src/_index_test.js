@@ -1,4 +1,4 @@
-// Copyright (c) 2015 Titanium I.T. LLC. All rights reserved. For license, see "README" or "LICENSE" file.
+// Copyright (c) 2016 Titanium I.T. LLC. All rights reserved. For license, see "README" or "LICENSE" file.
 (function() {
 	"use strict";
 
@@ -23,7 +23,7 @@
 			}, assertNotSuccess(done), assertFailure(done, "Karma did not test all browsers"));
 		});
 
-		it("expected browsers warn rather than fail when strict mode is off", function(done) {
+		it("warns about expected browsers, rather than fails, when strict mode is off", function(done) {
 			runner.run({
 				configFile: configFile,
 				expectedBrowsers: [ "force-failure browser" ],
