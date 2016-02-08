@@ -49,6 +49,7 @@ Run Karma tests. You need to call `start` first unless you use the `capture` opt
     * `expectedBrowsers` (optional array of strings, default `[]`): a list of test browsers. A warning is printed to stdout for each browser in the list that isn't tested. The string must exactly match the string displayed by Karma (e.g., "Chrome 42.0.2311 (Mac OS X 10.10.3)").
     * `strict` (optional boolean, default `true`): causes the tests to fail if `expectedBrowsers` results in any warnings.
     * `capture` (optional array of strings, default `[]`): if present, automatically starts Karma, captures the provided browsers, and shuts them down when done. (Equivalent to using `karma start configFile --browsers XX,YY --single-run`.)
+    * `clientArgs` (optional array of strings, default `[]`): options to pass through to your test adapter. For example, when using Mocha, providing `[ "--grep=SOMETHING" ]` will cause Mocha to only run tests containing the string "SOMETHING." The behavior of this parameter depends on your test adapter. It's equivalent to the `client.args` option in [the Karma configuration file](http://karma-runner.github.io/0.13/config/configuration-file.html).
     
 * `success()`: a function to call if the tests succeed.
 
@@ -139,6 +140,7 @@ This library is a simplebuild module. In addition to being used as a standalone 
 
 ## Version History
 
+__1.0.0:__ Added `clientArgs` pass-through
 __0.8.1:__ Fix: Corrected API naming error (`start` was misnamed)
 __0.8.0:__ Initial release.
 
