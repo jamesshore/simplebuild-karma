@@ -140,9 +140,9 @@ This library is a simplebuild module. In addition to being used as a standalone 
 
 ## Version History
 
-__1.0.0:__ Added `clientArgs` pass-through
-__0.8.1:__ Fix: Corrected API naming error (`start` was misnamed)
-__0.8.0:__ Initial release.
+* __1.0.0:__ Added `clientArgs` pass-through
+* __0.8.1:__ Fix: Corrected API naming error (`start` was misnamed)
+* __0.8.0:__ Initial release.
 
 
 ## Contributors
