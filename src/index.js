@@ -64,7 +64,7 @@
 				if (exitCode) return fail("Karma tests failed");
 				var browserMissing = checkRequiredBrowsers(options.expectedBrowsers, stdout);
 				if (browserMissing && options.strict) return fail("Karma did not test all browsers");
-				if (stdout.capturedOutput.indexOf("TOTAL: 0 SUCCESS") !== -1) return fail("No Karma tests were run!");
+				if (stdout.capturedOutput.indexOf("Executed 0 of 0") !== -1) return fail("No Karma tests were run!");
 
 				return success();
 			});

@@ -31,11 +31,11 @@
 			}, assertSuccess(done), assertNotFailure(done));
 		});
 
-		it("passes client args through", function(done) {
+		it("passes client args through and also fails when no tests are run", function(done) {
 			runner.run({
 				configFile: configFile,
-				clientArgs: [ "--grep=NO-SUCH-TEST-NAME:" ]
-			}, assertNotSuccess(done), assertFailure(done, "Karma tests failed"));    // should fail due to no tests running
+				clientArgs: ["--grep=NO-SUCH-TEST-NAME:"]
+				}, assertNotSuccess(done), assertFailure(done, "No Karma tests were run!"));
 		});
 
 		it("automatically captures browsers", function(done) {
