@@ -161,9 +161,6 @@ Created by James Shore.
 4. Release to npm: `npm publish`
 5. Release to github: `git push && git push --tags`
 
-Note: If the build doesn't work
-
-
 
 ## License
 
