@@ -11,7 +11,7 @@ This is a Node.js library. Install Node, then:
 
 `npm install simplebuild-karma` (add `--save` or `--save-dev` if you want)
 
-Note that this library uses your existing Karma installation. Karma 4.2 or less must be installed.
+Note that this library uses your existing Karma installation. Karma 4.3 or higher must be installed. (To use previous versions of Karma, install v1 of simplebuild-karma.)
 
 
 ## Usage

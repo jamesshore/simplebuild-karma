@@ -4,6 +4,7 @@
 
 	var runner = require("./index.js");
 	var assert = require("./assert.js");
+	var stdout = require("test-console").stdout;
 
 	describe("Karma runner", function() {
 
@@ -13,6 +14,25 @@
 			runner.run({
 				configFile: configFile
 			}, assertSuccess(done), assertNotFailure(done));
+		});
+
+		it("writes Karma progress to console", function(done) {
+			var inspect = stdout.inspect();
+			runner.run({
+				configFile: configFile
+			}, success, failure);
+
+			function success() {
+				inspect.restore();
+				var stringOutput = inspect.output.map(function(data) { return data.toString(); }).join("\n");
+				assert.matches(stringOutput, /Executed 1 of 1/);
+				assertSuccess(done)();
+			}
+
+			function failure() {
+				inspect.restore();
+				assertNotFailure(done)();
+			}
 		});
 
 		it("checks expected browsers", function(done) {
