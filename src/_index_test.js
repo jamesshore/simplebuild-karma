@@ -62,7 +62,7 @@
 			this.timeout(10 * 1000);
 			runner.run({
 				configFile: configFile,
-				capture: [ "Safari" ]
+				capture: [ "Firefox" ]
 			}, assertSuccess(done), assertNotFailure(done));
 		});
 
