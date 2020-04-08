@@ -54,8 +54,7 @@
 				clientArgs: options.clientArgs
 			};
 
-			var runKarma = runner.run.bind(runner);
-			if (config.singleRun) runKarma = karmaStart;
+			var runKarma = config.singleRun ? karmaStart : karmaRun;
 
 			var stdout = new CapturedStdout();
 			runKarma(config, function(exitCode) {
@@ -77,6 +76,12 @@
 	function karmaStart(config, callback) {
 		var server = new Server(config, callback);
 		server.start();
+	}
+
+	function karmaRun(config, callback) {
+		runner.run(config, callback).on("progress", function(data) {
+			process.stdout.write(data);
+		});
 	}
 
 	function checkRequiredBrowsers(requiredBrowsers, stdout) {
